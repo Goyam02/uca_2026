@@ -13,10 +13,11 @@ int my_strlen(const char *str){
 int main() {
     char mystr[100];
     printf("Enter a string: ");
-    scanf("%s", mystr);
+    if (fgets(mystr, sizeof(mystr), stdin) != NULL) {
+        int length = my_strlen(mystr);
+        printf("Length of the string: %d\n", length); 
+    }
 
-    int length = my_strlen(mystr);
-    printf("Length of the string: %d\n", length);
 
     return 0;
 }
